@@ -63,9 +63,9 @@ function AssessmentsPage() {
       status?: string;
       score?: number | null;
     }) => {
-      const patch: Record<string, unknown> = {};
-      if (status !== undefined) patch["status"] = status;
-      if (score !== undefined) patch["score"] = score;
+      const patch: { status?: string; score?: number | null } = {};
+      if (status !== undefined) patch.status = status;
+      if (score !== undefined) patch.score = score;
       const { error } = await supabase.from("assessments").update(patch).eq("id", id);
       if (error) throw error;
     },
