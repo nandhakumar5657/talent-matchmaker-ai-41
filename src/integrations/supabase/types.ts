@@ -14,7 +14,149 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessments: {
+        Row: {
+          candidate_id: string | null
+          id: string
+          link: string
+          score: number | null
+          sent_at: string
+          status: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          candidate_id?: string | null
+          id?: string
+          link?: string
+          score?: number | null
+          sent_at?: string
+          status?: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          candidate_id?: string | null
+          id?: string
+          link?: string
+          score?: number | null
+          sent_at?: string
+          status?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assessments_candidate_id_fkey"
+            columns: ["candidate_id"]
+            isOneToOne: false
+            referencedRelation: "candidates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      candidates: {
+        Row: {
+          batch: string
+          branch: string
+          cgpa: number | null
+          created_at: string
+          email: string
+          id: string
+          match_score: number | null
+          name: string
+          resume_text: string
+          skills: string[]
+          status: string
+          user_id: string
+        }
+        Insert: {
+          batch?: string
+          branch?: string
+          cgpa?: number | null
+          created_at?: string
+          email?: string
+          id?: string
+          match_score?: number | null
+          name: string
+          resume_text?: string
+          skills?: string[]
+          status?: string
+          user_id: string
+        }
+        Update: {
+          batch?: string
+          branch?: string
+          cgpa?: number | null
+          created_at?: string
+          email?: string
+          id?: string
+          match_score?: number | null
+          name?: string
+          resume_text?: string
+          skills?: string[]
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      job_descriptions: {
+        Row: {
+          company: string
+          created_at: string
+          description: string
+          id: string
+          location: string
+          package: string
+          skills: string[]
+          title: string
+          user_id: string
+        }
+        Insert: {
+          company?: string
+          created_at?: string
+          description?: string
+          id?: string
+          location?: string
+          package?: string
+          skills?: string[]
+          title: string
+          user_id: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          description?: string
+          id?: string
+          location?: string
+          package?: string
+          skills?: string[]
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          college: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+        }
+        Insert: {
+          college?: string | null
+          created_at?: string
+          full_name?: string | null
+          id: string
+        }
+        Update: {
+          college?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
