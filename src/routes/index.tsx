@@ -102,8 +102,17 @@ function Landing() {
         ))}
       </section>
 
-      <footer className="mt-5 px-2 py-4 text-[11px] font-medium text-muted-foreground">
-        TalentGrid Placement OS · secure faculty &amp; coordinator access
+      <footer className="mt-5 flex flex-wrap items-center justify-between gap-3 px-2 py-4 text-[11px] font-medium text-muted-foreground">
+        <div>TalentGrid Placement OS · secure faculty &amp; coordinator access</div>
+        <div className="flex items-center gap-4">
+          <Link to="/privacy" className="transition hover:text-card-foreground hover:underline">
+            Privacy Policy
+          </Link>
+          <span>·</span>
+          <Link to="/terms" className="transition hover:text-card-foreground hover:underline">
+            Terms of Service
+          </Link>
+        </div>
       </footer>
     </div>
   );

@@ -202,6 +202,18 @@ function AuthPage() {
             </button>
           )}
         </div>
+
+        <div className="mt-6 border-t border-border/50 pt-4 text-center text-[11px] text-muted-foreground">
+          By continuing, you agree to our{" "}
+          <Link to="/terms" className="text-cyan underline hover:brightness-125">
+            Terms
+          </Link>{" "}
+          and{" "}
+          <Link to="/privacy" className="text-cyan underline hover:brightness-125">
+            Privacy Policy
+          </Link>
+          .
+        </div>
       </div>
     </div>
   );
